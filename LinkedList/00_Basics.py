@@ -37,7 +37,7 @@ class LinkedList:
     print(llstr)
 
   def insert_values(self,data_lst):
-    self.head = None
+    # self.head = None
     for data in data_lst:
       self.insert_at_end(data)
 
@@ -67,9 +67,13 @@ class LinkedList:
     itr.next=itr.next.next
 
   def insert_at(self,index,data):
-    if index<0 or index>=self.lengthofLL():
+    if index<0 or index>self.lengthofLL():
       raise Exception("Invalid Index")
     
+    if index==self.lengthofLL():
+            self.insert_at_end(data)
+            return
+
     if index==0:
       self.head=Node(data,self.head)
       return
@@ -85,7 +89,16 @@ class LinkedList:
       itr=itr.next
       count+=1
 
-
+  def reversell(self):
+    n=self.head
+    c=self.head
+    p=None
+    while n:
+      n=c.next
+      c.next=p
+      p=c
+      c=n
+    self.head=p
     
 if __name__ == '__main__':
   ll=LinkedList()
@@ -97,4 +110,6 @@ if __name__ == '__main__':
   print(ll.lengthofLL())
   ll.remove_at(4)
   ll.insert_at(1,90)
+  ll.printop()
+  ll.reversell()
   ll.printop()
