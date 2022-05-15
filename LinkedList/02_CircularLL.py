@@ -39,8 +39,6 @@ class LinkedList:
     itr.nxt=node
     self.head=node
 
-    # def insert_at_end(self,data):
-    #   node
 
   def display(self):
     if self.head == None:
