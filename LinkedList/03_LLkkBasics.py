@@ -10,6 +10,7 @@ class Node:
 class LinkedList:
   def __init__(self):
       self.head=None
+      # self.tail=None
 
   def insertRecMain(self,data,index):
     self.head=self.insertRec(data,index,self.head)

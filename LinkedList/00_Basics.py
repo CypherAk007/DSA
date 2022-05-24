@@ -1,3 +1,6 @@
+import tarfile
+
+
 class Node:
   def __init__(self,data=None,next=None):
     self.data = data
@@ -6,6 +9,7 @@ class Node:
 class LinkedList:
   def __init__(self):
     self.head = None
+    self.tail=None
   
   def insert_at_beg(self,data):
     node = Node(data,self.head)# so that the new node points to the old node
@@ -21,6 +25,7 @@ class LinkedList:
     while itr.next:
       itr = itr.next
     itr.next=Node(data,None)
+    self.tail=itr.next
 
   def printop(self):
     if self.head is None:
@@ -90,6 +95,7 @@ class LinkedList:
       count+=1
 
   def reversell(self):
+    # itrative with 3 ptrs approach.
     n=self.head
     c=self.head
     p=None
@@ -100,16 +106,36 @@ class LinkedList:
       c=n
     self.head=p
     
+  def reversellRecursive(self,node):
+    if node== self.tail:
+      self.head=self.tail
+      return
+    
+    self.reversellRecursive(node.next)
+    self.tail.next=node
+    self.tail=node
+    self.tail.next=None
+
 if __name__ == '__main__':
   ll=LinkedList()
   # ll.insert_at_beg(5)
   # ll.insert_at_beg(89)
   # ll.insert_at_end(100)
-  data_lst=[1,2,3,4,5]
+  # data_lst=[1,2,3,4,5]
+  # ll.insert_values(data_lst)
+  # print(ll.lengthofLL())
+  # ll.remove_at(4)
+  # ll.insert_at(1,90)
+  # ll.printop()
+  # ll.reversell()
+  # ll.printop()
+
+
+  data_lst=[5,10,20,2,1]
   ll.insert_values(data_lst)
   print(ll.lengthofLL())
-  ll.remove_at(4)
-  ll.insert_at(1,90)
   ll.printop()
-  ll.reversell()
+  # ll.reversell()
+  # ll.printop()
+  ll.reversellRecursive(ll.head)
   ll.printop()
