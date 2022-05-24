@@ -131,11 +131,11 @@ if __name__ == '__main__':
   # ll.printop()
 
 
-  data_lst=[5,10,20,2,1]
-  ll.insert_values(data_lst)
-  print(ll.lengthofLL())
-  ll.printop()
-  # ll.reversell()
+  # data_lst=[5,10,20,2,1]
+  # ll.insert_values(data_lst)
+  # print(ll.lengthofLL())
   # ll.printop()
-  ll.reversellRecursive(ll.head)
-  ll.printop()
+  # # ll.reversell()
+  # # ll.printop()
+  # ll.reversellRecursive(ll.head)
+  # ll.printop()
