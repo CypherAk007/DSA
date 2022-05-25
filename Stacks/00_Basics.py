@@ -15,7 +15,7 @@ class Stack:
       return False
 
   # push
-  def push(self,value):
+  def push(self,value): #--TC---->O(1)| O(n^2)- #--SC---->O(1)-
     self.list.append(value)
     return "The element has been successfully inserted"
 
