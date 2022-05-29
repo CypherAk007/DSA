@@ -1,7 +1,7 @@
 from ast import Delete
 from multiprocessing.sharedctypes import Value
 
-
+      #--TC&SC---->O(1) for all op
 class Node:
   def __init__(self,value =None,next = None):
     self.value = value
