@@ -103,6 +103,7 @@ arr=[9,6,4,2,3,5,7,0,1]
 print(mn(arr))
 print(mn2(arr))
 """
+'''
 def mat(matrix):
   print(len(matrix))
   for i in range(len(matrix)):
@@ -128,3 +129,131 @@ def mat(matrix):
 
 matrix = [[1,1,1],[1,2,3],[1,2,3]]
 print(mat(matrix))
+'''
+
+"""
+# 495. Teemo Attacking
+def ta(ts,d):
+  count=0
+  for i in range(len(ts)):
+    curr=ts[i]
+    poi=curr+d-1
+    if i!=len(ts)-1 and ts[i+1]<=poi:
+      count+=ts[i+1]-ts[i]
+    else:
+      count+=d
+
+  return count
+
+
+ts=[1,4]
+d=2
+print(ta(ts,d))
+"""
+
+"""
+# 13. Roman to Integer
+def rtoi(s):
+  d={ "I":            1,
+      "V":             5,
+      "X":            10,
+      "L":            50,
+      "C":             100,
+      "D" :            500,
+      "M" :           1000}  
+  # print(d)
+  i=0
+  res=0
+  while(i<len(s)):
+    if i!=len(s)-1 and d[s[i]]<d[s[i+1]]:
+      res+=(d[s[i+1]]-d[s[i]])
+      i+=1
+    else:
+      res+=d[s[i]]
+    i+=1
+  return res
+print(rtoi("MCMXCIV"))
+"""
+"""
+# Bubble sort
+
+def bs(arr,k):
+  for j in range(len(arr)-1):
+    for i in range(len(arr)-j-1):
+      if arr[i]>arr[i+1]:
+        arr[i],arr[i+1]=arr[i+1],arr[i]
+  return arr[-k]
+arr=[3,2,1,5,6,4]
+k=2
+print(bs(arr,k))
+print(arr)
+"""
+"""
+# 2091. Removing Minimum and Maximum From Array
+
+from operator import indexOf
+from os import remove
+
+
+def rmm(arr):
+  a=min(arr)
+  b=max(arr)
+  i=indexOf(arr,a)
+  j=indexOf(arr,b)
+  print(a,i,b,j)
+  lst=[]
+  #remove fm min front and max back
+  front=min(i,j)+1
+  back = len(arr)-max(i,j)
+  print(front,back)
+  lst.append(front+back)
+  # remove both fm front
+  lst.append(max(i,j)+1)
+  # remove both fm back
+  lst.append(len(arr)-min(i,j))
+  print(lst)
+  print(min(lst))
+  return min(lst)
+
+arr=[101]
+rmm(arr)
+"""
+"""
+# two sum
+
+def ts(arr,t):
+  d={}
+  for i in range(len(arr)):
+    temp=abs(t-arr[i])
+    if temp in d:
+      return d[temp],i
+    d[arr[i]]=i
+
+arr=[2,7,11,15]
+t=9
+print(ts(arr,t))
+"""
+# three sum
+# def ths(arr,t):
+#   d={}
+#   lst=[]
+#   for i in range(len(arr)):
+#     temp=t-arr[i]
+#     if temp in d:
+#       tlst=[]
+#       print(d[temp])
+#       for i in d[temp]:
+#         print(f'1->{arr[i]}')
+#         tlst.append(arr[i])
+#       lst.append(tlst+[arr[i]])
+#     else:
+#       for j in range(i+1,len(arr)):
+#         d[arr[i]+arr[j]]=[i,j]
+#   print(d)
+#   return lst  
+
+# arr=[-1,0,1,2,-1,-4]
+# t=0
+# print(ths(arr,t))
+      
+
