@@ -255,5 +255,61 @@ print(ts(arr,t))
 # arr=[-1,0,1,2,-1,-4]
 # t=0
 # print(ths(arr,t))
-      
 
+"""
+# Sort Colors
+def sc(arr):
+  l=0
+  m=0
+  h=len(arr)-1
+  i=0
+  while(m<=h):
+    if arr[m]==0:
+      arr[l],arr[m]=arr[m],arr[l]
+      l+=1
+      m+=1
+      print("1")
+      print(i,l,m,h)
+      print(arr)
+    elif arr[m]==1:
+      m+=1
+      print("2")
+      print(i,l,m,h)
+      print(arr)
+    else:
+      arr[m],arr[h]=arr[h],arr[m]
+      h-=1
+      print("3")
+      print(i,l,m,h)
+      print(arr)
+    i+=1
+      
+arr= [2,0,2,1,1,0]     
+sc(arr)
+print(arr)
+"""
+# 442. Find All Duplicates in an Array
+def fad(arr):
+  out=[]
+  for i in range(arr):
+    if arr[i-1]<0:
+      out.append(abs(arr[i]))
+    else:
+      arr[i-1]*=-1
+
+#53. Maximum Subarray
+def msa(arr):
+  maxi=float('-inf')
+  cur_sum=0
+  for i in arr:
+    cur_sum+=i
+    
+    if cur_sum>maxi:
+      maxi=cur_sum
+    print(cur_sum,maxi)
+    if cur_sum<0:
+      cur_sum=0
+      print("zero")
+
+msa([-2,1,-3,4,-1,2,1,-5,4])
+  
