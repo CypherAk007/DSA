@@ -288,6 +288,7 @@ arr= [2,0,2,1,1,0]
 sc(arr)
 print(arr)
 """
+"""
 # 442. Find All Duplicates in an Array
 def fad(arr):
   out=[]
@@ -296,7 +297,8 @@ def fad(arr):
       out.append(abs(arr[i]))
     else:
       arr[i-1]*=-1
-
+"""
+"""
 #53. Maximum Subarray
 def msa(arr):
   maxi=float('-inf')
@@ -312,4 +314,124 @@ def msa(arr):
       print("zero")
 
 msa([-2,1,-3,4,-1,2,1,-5,4])
-  
+  """
+"""
+# 1470. Shuffle the Array
+def sa(arr,n):
+  res=[]
+  i=0
+  j=n
+  while(i!=n or j<len(arr)):
+    res.append(arr[i])
+    i+=1
+    res.append(arr[j])
+    j+=1
+  return res
+
+def saIp(arr,n):
+  for i in range(n):
+    arr[i]+=arr[n+i]*10000
+
+  for i in range(n-1,-1,-1):
+    arr[2*i+1]=arr[i]//10000
+    arr[2*i]=arr[i]%10000
+
+arr = [2,5,1,3,4,7]
+n=3
+print(saIp(arr,n))
+print(arr)
+"""
+"""
+# # 1431. Kids With the Greatest Number of Candies
+# def candy(arr,e):
+#   maxi=max(arr)
+
+from tkinter.messagebox import YES
+
+class Solution:
+    def palindromicArray(self, n : int, a : List[int], k : int) -> bool:
+        # code here
+        i=0
+        temp=[]
+        for i in range(len(a)):
+          if a[i]!=k:
+            temp.append(a[i])
+        return self.checkPalindrom(temp)
+        
+        
+    def checkPalindrom(self,arr):
+        i=0
+        j=len(arr)-1
+        if len(arr)==1:
+            return 1
+            
+        while(i<j):
+            if arr[i]==arr[j]:
+                i+=1
+                j-=1
+            else:
+                return False
+        return True
+a=[13, 55 ,7 ,60 ,63 ,3 ,58 ,13 ,12 ,12 ,13 ,58 ,3 ,63 ,60, 7 ,55 ,13]
+k=58
+# k=58
+
+n=len(a)
+palindromicArray( n , a , k )
+"""
+
+# # 1854. Maximum Population Year
+# def mp(arr):
+#   f=arr[0][0]
+#   l=arr[-1][1]
+#   print(f,l)
+#   temp=[0]*(l-f)
+#   print(len(temp),l-f)
+#   for i in arr:
+#     print(i[0],i[1])
+#     for j in range(i[0],i[1]):
+#       x=j%f
+#       print(x)
+#       temp[x]+=1
+#   print(temp)
+#   max_idx=0
+#   for i in range(len(temp)):
+#     if temp[i]>temp[max_idx]:
+#       max_idx=i
+#   print(f+ max_idx)
+#   return f+max_idx
+
+# arr=[[1982,1998],[2013,2042],[2010,2035],[2022,2050],[2047,2048]]
+# mp(arr)
+
+# # # # # # # # # # # # # # # # lc contest
+# def re(arr,op):
+
+#   for i in range(len(op)):
+#     for j in range(len(arr)):
+#       if arr[j]==op[i][0]:
+#         arr[j]=op[i][1]
+#         break
+#   print(arr)
+
+
+# arr=[1,2,4,6]
+# op=[[1,3],[4,7],[6,1]]
+# re(arr,op)
+
+def rec(arr,n):
+  if n==1:
+    return arr[0]
+  # print(n,n/2,n//2)
+  temp=[0]*(n//2)
+  for i in range(n//2):
+    if i%2==0:
+      temp[i]=min(arr[2*i],arr[2*i+1])
+    else:
+      temp[i]=max(arr[2*i],arr[2*i+1])
+  out=rec(temp,n//2)
+  return out
+
+arr=[3]
+n=len(arr)
+print(rec(arr,n))
