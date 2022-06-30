@@ -379,7 +379,7 @@ k=58
 n=len(a)
 palindromicArray( n , a , k )
 """
-
+"""
 # # 1854. Maximum Population Year
 # def mp(arr):
 #   f=arr[0][0]
@@ -403,7 +403,8 @@ palindromicArray( n , a , k )
 
 # arr=[[1982,1998],[2013,2042],[2010,2035],[2022,2050],[2047,2048]]
 # mp(arr)
-
+"""
+"""
 # # # # # # # # # # # # # # # # lc contest
 # def re(arr,op):
 
@@ -435,3 +436,117 @@ def rec(arr,n):
 arr=[3]
 n=len(arr)
 print(rec(arr,n))
+
+"""
+"""
+# 989. Add to Array-Form of Integer
+def add(num,k):
+  c=k
+  ext=[]
+  for i in range(len(num)-1,-1,-1):
+    if c==0:
+      break
+    val=c+num[i]
+    num[i]=val%10
+    val=val//10
+    c=val
+    print(num,val,c,k)
+  if c!=0:
+    while c!=0:
+      ext.append(c%10)
+      c=c//10
+      
+      print(c,ext)
+    ext.reverse()
+    for i in range(len(num)):
+      ext.append(num[i])
+    return ext
+  return num
+# num=[1,2,0,0]
+# k=34
+# num = [2,1,5]
+# k = 806
+num=[0]
+k=10000
+# num = [2,7,4]
+# k = 181
+print(add(num,k))
+"""
+"""
+
+# 66.PlusOne
+def po(d):
+  c=1
+  lst=[]
+  for i in range(len(d)-1,-1,-1):
+    if c==0:
+      break
+    temp=d[i]+c
+    d[i]=temp%10
+    c=temp//10
+    print(c,temp,d)
+  while(c!=0):
+    lst.append(c%10)
+    print(lst)
+    c=c//10
+  lst.reverse()
+  lst=lst+d
+  return lst
+
+d=[9]
+print(po(d))
+"""
+"""
+
+# Nextpermutations
+def np(a):
+  i=j=len(a)-1
+  # we find the breakele
+  while(i>0 and a[i-1]>=a[i]):
+    i-=1
+  if i==0:
+    a.reverse()
+    return
+
+  k=i-1 
+  #we find ele that is next no.of k
+  while(a[j]<=a[k]):
+    j-=1
+  #we swap to no.
+  a[k],a[j]=a[j],a[k]
+  #we have to sort the rest
+  l=k+1
+  r=len(a)-1
+  while(l<r):
+    a[l],a[r]=a[r],a[l]
+    l+=1
+    r-=1
+  
+
+a=[3,2,1]
+np(a)
+print(a)
+"""
+"""
+
+# def maxProfit(prices):
+#   min_val=float('inf')
+#   print(min_val)
+#   max_profit=0
+#   for i in range(len(prices)):
+#     if prices[i]<min_val:
+#       min_val = prices[i]
+#     if max_profit<prices[i]-min_val:
+#       max_profit=prices[i]-min_val
+#   return max_profit 
+
+# prices=[7,1,4,5,6]
+# print(maxProfit(prices) )
+
+"""
+"""
+"""
+
+# def mi(a):
+#   i=0
+#   while i<len(a)-1
