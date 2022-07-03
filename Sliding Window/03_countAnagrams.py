@@ -17,7 +17,7 @@ def countOfOccAnagrams(s,p):
     count = len(d)
     
     while(j<len(s)):
-        if s[j] in d and d[s[j]]>=0:
+        if s[j] in d:
             d[s[j]]-=1
             
             if d[s[j]]==0:
