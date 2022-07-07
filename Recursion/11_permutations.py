@@ -26,5 +26,5 @@ def perarrlst(p,up):
 
 
 p=''
-up='abc'
+up='aaa'
 permutations(p,up)
