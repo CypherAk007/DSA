@@ -19,8 +19,8 @@ def largeSubArrSum(a,k):
             while summ>k:
                 summ=summ-a[i]
                 i+=1
-                if summ==k:
-                    mx = max(mx,j-i+1)
+                # if summ==k:
+                #     mx = max(mx,j-i+1)
             
             j+=1
             
@@ -29,8 +29,8 @@ def largeSubArrSum(a,k):
     return mx
             
 
-a=[1,2,3,7,5 ]
-k=12 #sum = 5
+a=[4,1,1,1,2,3,5]
+k=5 #sum = 5
 print(largeSubArrSum(a,k))
 # Input 1:
 #     A = [4,1,1,1,2,3,5]

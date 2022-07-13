@@ -605,15 +605,15 @@ if __name__=='__main__':
     # up='12'
     # keypad(p,up)
 
-    # p=''
-    # up=4
-    # dice(p,up)
+    p=''
+    up=4
+    dice(p,up)
 
     # print(cntmaze(3,3))
     # print(Mazelst('',3,3))
     # print(Mazelstdiag('',3,3))
 
-    maze=[[True,True,True],
-            [True,False,True],
-            [True,True,True]]
-    print(mazeWtObst('',maze,0,0))
+    # maze=[[True,True,True],
+    #         [True,False,True],
+    #         [True,True,True]]
+    # print(mazeWtObst('',maze,0,0))
