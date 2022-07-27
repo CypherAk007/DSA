@@ -11,7 +11,7 @@ def minWinSubStr(s,t):
         if t[i] in d:
             d[t[i]]+=1 
         else:
-            d[t[i]]=1
+            d[t[i]]=1 
     count=len(d) #tells the no. of unique char in the t string
     # print(d,count)
     
