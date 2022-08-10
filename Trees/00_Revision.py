@@ -1,8 +1,10 @@
+import math
 class Node:
     def __init__(self,key):
         self.data = key
         self.left = None
         self.right = None
+        self.prev=None
         
     def levelOrder(self,root):
         q=[]
@@ -396,7 +398,217 @@ class Node:
         if root.left!=None or root.right!=None:#if not leaf node
             root.data = tot 
             
+    def levelOrder(self,root):
+        q=[]
+        q.append(root)
+        res=[]
+        while q:
+            qlen=len(q)
+            temp=[]
+            for i in range(qlen):
+                val=q.pop(0)
+                if val:
+                    temp.append(val.data)
+                    if val.left:
+                        q.append(val.left)
+                    if val.right:
+                        q.append(val.right)
+            if temp:
+                res.append(temp)
+        return res 
+
+    def kNodesDist(self,root,t,k):
+        parent={}
+        self.findParent(root,parent)
+        # print(parent)
+        # do lvl/bfs
+        res=[]
+        visited={}
+        q=[]
+        z=self.findNode(root,t)
+        q.append(z)
+        # print(q)
+        visited[z]=True
+        lvl=0
+        while len(q)!=0:
+            if lvl==k:
+                break
+            qlen=len(q)
+            # print(qlen)
+            lvl+=1
+            # print(lvl)
+            for i in range(qlen):
+                val=q.pop(0)
+    
+                if val.left!=None and val.left not in visited:
+                    q.append(val.left)
+                    visited[val.left]=True
+                if val.right!=None and val.right not in visited:
+                    q.append(val.right)
+                    visited[val.right]=True
+                if parent.get(val)!=None and parent.get(val) not in visited:
+                    q.append(parent.get(val))
+                    visited[parent.get(val)]=True 
+                print(visited)   
+        while q:       
+            x=q.pop(0).data
+            # print(x)
+            res.append(x)
+        return res
         
+        
+    def findParent(self,root,parent):
+        # lvlorder
+        q=[]
+        q.append(root)
+        while q:
+            val=q.pop(0)
+            if val.left:
+                parent[val.left]=val
+                q.append(val.left)
+            if val.right:
+                parent[val.right]=val
+                q.append(val.right)
+                
+    def findNode(self,root,t):
+        if root==None or root.data==t:
+            return root
+        return self.findNode(root.left,t)
+        return self.findNode(root.right,t)
+        
+    def BurnTree(self,root,t,k):
+        parent={}
+        self.findParent(root,parent)
+        # print(parent)
+        # do lvl/bfs
+        res=[]
+        visited={}
+        q=[]
+        z=self.findNode(root,t)
+        q.append(z)
+        # print(q)
+        visited[z]=True
+        lvl=0
+        while len(q)!=0:
+            flag=0
+            qlen=len(q)
+            # print(qlen)
+            
+            # print(lvl,q)
+            # print(lvl)
+            for i in range(qlen):
+                val=q.pop(0)
+    
+                if val.left!=None and val.left not in visited:
+                    q.append(val.left)
+                    visited[val.left]=True
+                    flag=1
+                if val.right!=None and val.right not in visited:
+                    q.append(val.right)
+                    visited[val.right]=True
+                    flag=1
+                if parent.get(val)!=None and parent.get(val) not in visited:
+                    q.append(parent.get(val))
+                    visited[parent.get(val)]=True 
+                    flag=1
+                # print(visited)   
+            if flag:
+                lvl+=1
+        return lvl
+        
+    def countNodes(self,root):
+        # lh==rh then 2^lh-1
+        # else 1+lh+rh
+        if root==None:
+            return 0 
+        lh=self.getleftheight(root)
+        rh=self.getrightheight(root)
+        if lh==rh:
+            return int(math.pow(2,lh)-1)
+        else:
+            return 1+self.countNodes(root.left)+self.countNodes(root.right)
+    def getleftheight(self,root):
+        count=0
+        while(root!=None):
+            count+=1 
+            root=root.left 
+        return count 
+    def getrightheight(self,root):
+        count=0
+        while(root!=None):
+            count+=1 
+            root=root.right 
+        return count 
+    
+    def buildTreepre(self,pre,ino):
+        inmap={}
+        for i in range(len(ino)):
+            inmap[ino[i]]=i
+        root=self.helperpre(pre,0,len(pre)-1,ino,0,len(ino)-1,inmap)
+        root2=self.helperpost(pre,0,len(pre)-1,ino,0,len(ino)-1,inmap)
+        # print(root)
+        # print(root2)
+        return root
+    def buildTreepost(self,pre,ino):
+        inmap={}
+        for i in range(len(ino)):
+            inmap[ino[i]]=i
+        root=self.helperpre(pre,0,len(pre)-1,ino,0,len(ino)-1,inmap)
+        root2=self.helperpost(pre,0,len(pre)-1,ino,0,len(ino)-1,inmap)
+        # print(root)
+        # print(root2)
+        return root2
+    def helperpre(self,pre,prestart,preend,ino,instart,inend,inmap):
+        if prestart>preend or instart>inend:
+            return None
+        root=Node(pre[prestart])
+        idxroot=inmap[root.data]
+        numsLeft=idxroot-instart
+        root.left=self.helperpre(pre,prestart+1,prestart+numsLeft,ino,instart,idxroot-1,inmap)
+        root.right=self.helperpre(pre,prestart+numsLeft+1,preend,ino,idxroot+1,inend,inmap)
+        return root 
+    def helperpost(self,pre,prestart,preend,ino,instart,inend,inmap):
+        if prestart>preend or instart>inend:
+            return None
+        root=Node(pre[preend])
+        idxroot=inmap[root.data]
+        numsLeft=idxroot-instart
+        root.left=self.helperpost(pre,prestart,prestart+numsLeft-1,ino,instart,idxroot-1,inmap)
+        root.right=self.helperpost(pre,prestart+numsLeft,preend-1,ino,idxroot+1,inend,inmap)
+        return root 
+    
+    def morisTra(self,root):
+        inorder=[]
+        cur=root
+        while(cur!=None):
+            # noleft
+            if cur.left==None:
+                inorder.append(cur.data)
+                cur=cur.right 
+            else:
+                prev=cur.left 
+                while(prev.right and prev.right!=cur ):
+                    prev=prev.right 
+                if prev.right==None:
+                    prev.right=cur 
+                    cur=cur.left 
+                else:
+                    prev.right=None
+                    inorder.append(cur.data)
+                    cur=cur.right 
+        return inorder   
+    def flatternbt(self,root):
+        # print(root.prev)
+        if root==None:
+            return 
+        self.flatternbt(root.right)
+        self.flatternbt(root.left)
+        root.right=self.prev
+        root.left=None 
+        self.prev=root 
+        
+
+
 if __name__=='__main__':
     rt=Node(1)
     rt.left=Node(2)
@@ -425,14 +637,14 @@ if __name__=='__main__':
     print(rt.BoundryTraversal(rt))
     arr=[1,2,3,4,5,6,6,6,6]
     print(rt.levelOrder(rt.insertLevelOrder(arr,0,len(arr))))
-    rt.verticalOrder(rt)
-    print(rt.sym(rt.left,rt.right))
-    print(rt.topView(rt))
-    print(rt.bottomView(rt))
-    print(rt.rv(rt))
-    print(rt.rton(rt,4))
-    print(rt.lca(rt,5,11).data)
-    print(rt.widthOfBT(rt))
-    print(rt.levelOrder(rt))
-    print(rt.changeTree(rt))
-    print(rt.levelOrder(rt))
+    # rt.verticalOrder(rt)
+    # print(rt.sym(rt.left,rt.right))
+    # print(rt.topView(rt))
+    # print(rt.bottomView(rt))
+    # print(rt.rv(rt))
+    # print(rt.rton(rt,4))
+    # print(rt.lca(rt,5,11).data)
+    # print(rt.widthOfBT(rt))
+    # print(rt.levelOrder(rt))
+    # print(rt.changeTree(rt))
+    # print(rt.levelOrder(rt))
