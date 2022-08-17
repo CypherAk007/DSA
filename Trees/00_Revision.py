@@ -606,8 +606,123 @@ class Node:
         root.right=self.prev
         root.left=None 
         self.prev=root 
-        
 
+        def levelOrder(self,root):
+        q=[]
+        q.append(root)
+        res=[]
+        while q:
+            qlen=len(q)
+            temp=[]
+            for i in range(qlen):
+                val=q.pop(0)
+                temp.append(val.data)
+                if val.left:
+                    q.append(val.left)
+                if val.right:
+                    q.append(val.right)
+                    
+            res.append(temp)
+        return res 
+
+    def delete(self,root,key):
+        if root==None:
+            return None 
+        if root.data==key:#root
+            return self.helper(root)
+        dummy=root
+        while(root!=None):
+            if root.data>key:
+                if root.left!=None and root.left.data==key:
+                    root.left=self.helper(root.left)
+                    break
+                else:
+                    root=root.left
+            else:
+                if root.right!=None and root.right.data==key:
+                    root.right=self.helper(root.right)
+                    break
+                else:
+                    root=root.right 
+        return dummy
+        
+    def helper(self,root):
+        if root.left==None:
+            return root.right 
+        if root.right==None:
+            return root.left 
+        rchild=root.right 
+        lastrchild=self.findLright(root.left)
+        lastrchild.left=rchild
+        return root.left
+        
+    def findLright(self,root):
+        if root.right==None:
+            return root 
+        self.findLright(root.right)
+        
+    def validBst(self,root):
+        return self.isValid(root,float('-inf'),float('inf'))
+    
+    def isValid(self,root,minval,maxval):
+        if root==None:
+            return True 
+        if root.data>=maxval or root.data<=minval:
+            return False
+        return self.isValid(root.left,minval,root.data) and self.isValid(root.right,root.data,maxval)
+        
+    def lcaBt(self,root,p,q):
+        if root==None:
+            return None
+        cur=root.data
+        if p.data>cur and q.data>cur:
+            return self.lcaBt(root.right,p,q)
+        if p.data<cur and q.data<cur:
+            return self.lcaBt(root.left,p,q)
+        return root
+        
+       
+    def bstPreorder(self,preorder):
+        return self.helperp(preorder,float('inf'),[0])
+    def helperp(self,preorder,bound,i):
+        if i[0]==len(preorder) or preorder[i[0]]>bound:
+            return None 
+        root=Node(preorder[i[0]])
+        i[0]+=1 
+        root.left=self.helperp(preorder,root.data,i)
+        root.right=self.helperp(preorder,bound,i)
+        return root
+        
+    def inorderSuccssor(self,root,t):
+        succsor=None 
+        while(root!=None):
+            if t>root.data:
+                root=root.right
+            else:
+                succsor=root.data
+                root=root.left
+        return succsor
+        
+    def bstItrator(self,root):
+        def __init__(self,root):
+            self.s=[]
+            self.pushAll(root)
+        
+        def pushAll(self,root):
+            while(root!=None):
+                self.s.append(root)
+                root=root.left
+        
+        def Next(self):
+            x=self.s.pop()
+            self.pushAll(x.right)
+            return x.data
+        
+        def hasNext(self):
+            if len(s)!=0:
+                return True
+            else:
+                return False
 
 if __name__=='__main__':
     rt=Node(1)
