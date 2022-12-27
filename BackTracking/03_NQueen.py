@@ -52,8 +52,5 @@ def display(board):
 
 if __name__=='__main__':
   n=4
-  board=[[0,0,0,0],
-          [0,0,0,0],
-          [0,0,0,0],
-          [0,0,0,0]]
+  board=[[0]*n for i in range(n)]
   print(queens(board,0)) # prints the total no. of ways we can place a queen
