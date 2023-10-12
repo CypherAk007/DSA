@@ -12,3 +12,4 @@
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/recursion-advanced-python/problem/power-of-numbers-1587115620
 - https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1
 - https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
+- Heap Sort
