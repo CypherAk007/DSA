@@ -14,3 +14,4 @@
 - https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
 - Heap Sort
 - https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers/
+- https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/
