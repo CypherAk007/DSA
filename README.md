@@ -18,3 +18,4 @@
 - https://www.geeksforgeeks.org/in-place-merge-sort/
 - https://www.spoj.com/problems/SUBSUMS/
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/hashing-basic-python/problem/separate-chaining-in-hashing-1587115621
+- https://practice.geeksforgeeks.org/batch/ds-with-python/track/matrix-advanced-python/problem/determinant-of-a-matrix-1587115620
