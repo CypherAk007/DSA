@@ -3,6 +3,8 @@
 - https://seanprashad.com/leetcode-patterns/
 - https://leetcode.com/problem-list/top-100-liked-questions/
 - https://leetcode.com/problem-list/top-interview-questions/
+- [DSA Questions.pdf](https://github.com/CypherAk007/DSA/files/13225839/DSA.Questions.pdf)
+- 
 <img width="840" alt="Screenshot 2023-09-16 at 10 18 43 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/4506b953-c757-420b-bee0-94dfa0bf71f8">
 
 ## unsolved/reffer - 
