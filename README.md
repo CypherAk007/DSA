@@ -23,3 +23,4 @@
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/matrix-advanced-python/problem/determinant-of-a-matrix-1587115620
 - https://practice.geeksforgeeks.org/problems/maximum-difference-between-pair-in-a-matrix/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab (Matrix - DP)
 - https://practice.geeksforgeeks.org/problems/max-rectangle/1 (Matrix- stacks - max area of histogram- aditya verma)
+- https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1 (matrix+BS)
