@@ -19,3 +19,4 @@
 - https://www.spoj.com/problems/SUBSUMS/
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/hashing-basic-python/problem/separate-chaining-in-hashing-1587115621
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/matrix-advanced-python/problem/determinant-of-a-matrix-1587115620
+- https://practice.geeksforgeeks.org/problems/maximum-difference-between-pair-in-a-matrix/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab (Matrix - DP)
