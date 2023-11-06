@@ -14,6 +14,7 @@
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/recursion-advanced-python/problem/power-of-numbers-1587115620
 - https://practice.geeksforgeeks.org/problems/stickler-theif-1587115621/1
 - https://practice.geeksforgeeks.org/problems/k-th-element-of-two-sorted-array1317/1
+- CycleSort,RadixSort,BucketSort
 - Heap Sort
 - https://www.geeksforgeeks.org/rearrange-positive-and-negative-numbers/
 - https://www.geeksforgeeks.org/must-do-coding-questions-for-companies-like-amazon-microsoft-adobe/
