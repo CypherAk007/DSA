@@ -25,3 +25,4 @@
 - https://practice.geeksforgeeks.org/problems/maximum-difference-between-pair-in-a-matrix/1?utm_source=geeksforgeeks&utm_medium=ml_article_practice_tab&utm_campaign=article_practice_tab (Matrix - DP)
 - https://practice.geeksforgeeks.org/problems/max-rectangle/1 (Matrix- stacks - max area of histogram- aditya verma)
 - https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1 (matrix+BS)
+- https://practice.geeksforgeeks.org/batch/ds-with-python/track/string-advanced-python/problem/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621 (Sliding Window)
