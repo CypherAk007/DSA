@@ -27,3 +27,4 @@
 - https://practice.geeksforgeeks.org/problems/kth-element-in-matrix/1 (matrix+BS)
 - https://practice.geeksforgeeks.org/batch/ds-with-python/track/string-advanced-python/problem/smallest-window-in-a-string-containing-all-the-characters-of-another-string-1587115621 (Sliding Window)
 <img width="639" alt="Screenshot 2023-11-19 at 6 43 22 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/bee2b570-01d5-464b-9d0f-861f8fed2aa6">
+https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1 (Strings - DP)
