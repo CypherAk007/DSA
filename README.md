@@ -32,4 +32,5 @@
 - https://www.geeksforgeeks.org/problems/find-the-string-in-grid0111/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
 - https://www.geeksforgeeks.org/find-count-number-given-string-present-2d-character-array/
 - https://www.geeksforgeeks.org/program-generate-possible-valid-ip-addresses-given-string/
-- - https://practice.geeksforgeeks.org/problems/rearrange-characters4649/1 (heap)
+- https://practice.geeksforgeeks.org/problems/rearrange-characters4649/1 (Strings - heap)
+- https://practice.geeksforgeeks.org/problems/wildcard-string-matching1126/1 (Strings- dp )
