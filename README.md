@@ -29,3 +29,5 @@
 <img width="639" alt="Screenshot 2023-11-19 at 6 43 22 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/bee2b570-01d5-464b-9d0f-861f8fed2aa6">
 https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence2004/1 (Strings - DP)
 https://practice.geeksforgeeks.org/problems/edit-distance3702/1 (Strings - DP)
+https://www.geeksforgeeks.org/problems/find-the-string-in-grid0111/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
+https://www.geeksforgeeks.org/find-count-number-given-string-present-2d-character-array/
