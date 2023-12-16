@@ -34,3 +34,4 @@
 - https://www.geeksforgeeks.org/program-generate-possible-valid-ip-addresses-given-string/
 - https://practice.geeksforgeeks.org/problems/rearrange-characters4649/1 (Strings - heap)
 - https://practice.geeksforgeeks.org/problems/wildcard-string-matching1126/1 (Strings- dp )
+- https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
