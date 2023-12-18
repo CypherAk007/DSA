@@ -35,3 +35,5 @@
 - https://practice.geeksforgeeks.org/problems/rearrange-characters4649/1 (Strings - heap)
 - https://practice.geeksforgeeks.org/problems/wildcard-string-matching1126/1 (Strings- dp )
 - https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
+- STACKS
+- <img width="767" alt="Screenshot 2023-12-18 at 6 34 31 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/aec1eb09-6102-4fb9-8be4-fbc30cdc0876">
