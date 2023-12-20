@@ -37,3 +37,18 @@
 - https://www.geeksforgeeks.org/efficiently-implement-k-stacks-single-array/
 - STACKS
 - <img width="767" alt="Screenshot 2023-12-18 at 6 34 31 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/aec1eb09-6102-4fb9-8be4-fbc30cdc0876">
+- https://leetcode.com/problems/sum-of-subarray-minimums/description/
+- 
+What can monotonous decrease stack do?
+Some applications of monotone (increase/decrease) stack in leetcode:
+Next Greater Element II (a very basic one)
+Largest Rectangle in Histogram(almost the same as this problem)
+Maximal Rectangle(please do this problem after you solve the above one)
+Trapping Rain Water (challenge)
+Remove Duplicate Letters(challenge)
+Remove K Digits
+Create Maximum Number
+132 Pattern(challenge, instead of focusing on the elements in the stack, this problem focuses on the elements poped from the monotone stack)
+sliding window maximum(challenge, monotone queue)
+Max Chunks To Make Sorted II
+
