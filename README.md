@@ -50,4 +50,4 @@
 - 132 Pattern(challenge, instead of focusing on the elements in the stack, this problem focuses on the elements poped from the monotone stack)
 - sliding window maximum(challenge, monotone queue)
 - Max Chunks To Make Sorted II
-
+- https://leetcode.com/problems/asteroid-collision/description/
