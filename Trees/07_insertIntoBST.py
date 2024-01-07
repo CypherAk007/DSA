@@ -70,9 +70,42 @@ class BST:
         self.populateSortedInternal(arr,lo,mid-1)
         self.populateSortedInternal(arr,mid+1,hi)
 
+    def preorder(self):
+        self.preorderInternal(self.root)
+
+    def preorderInternal(self,node):
+        if node==None:
+            return 
+        print(node.value)
+        self.preorderInternal(node.left)
+        self.preorderInternal(node.right)
+
+    def inorder(self):
+        self.inorderInternal(self.root)
+
+    def inorderInternal(self,node):
+        if node==None:
+            return 
+        self.inorderInternal(node.left)
+        print(node.value)
+        self.inorderInternal(node.right)
+
+    def postorder(self):
+        self.postorderInternal(self.root)
+
+    def postorderInternal(self,node):
+        if node==None:
+            return 
+        self.postorderInternal(node.left)
+        self.postorderInternal(node.right)
+        print(node.value)
+    
 
 
 bst = BST()
 arr=[1,2,3,4,5,6]
 bst.populateSorted(arr)
 bst.display()
+# bst.preorder()
+# bst.inorder()
+bst.postorder()
