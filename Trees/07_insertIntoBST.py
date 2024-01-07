@@ -52,29 +52,25 @@ class BST:
 
         return node
     
+    #used to insert to tree from array
+    def populate(self,arr):
+        for i in range(len(arr)):
+            self.insert(arr[i])
 
 bst = BST()
-bst.insert(5)
-print("height",bst.height(bst.root))
-bst.insert(4)
-print("height",bst.height(bst.root))
-bst.insert(6)
-bst.insert(3)
-bst.insert(2)
-print("height",bst.height(bst.root))
+arr=[3,4,5,2,6,1,7]
+bst.populate(arr)
 bst.display()
-print(bst.balanced())
-'''
-output
-height 0
-height 1
-height 3
-Root Node : 5
-LeftChildOf 5: 4
-LeftChildOf 4: 3
-LeftChildOf 3: 2
-RightChildOf 5: 6
-False
+
 
 '''
-        
+output
+Root Node : 3
+LeftChildOf 3: 2
+LeftChildOf 2: 1
+RightChildOf 3: 4
+RightChildOf 4: 5
+RightChildOf 5: 6
+RightChildOf 6: 7
+
+'''
