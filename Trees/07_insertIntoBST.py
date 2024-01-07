@@ -57,20 +57,22 @@ class BST:
         for i in range(len(arr)):
             self.insert(arr[i])
 
+    #used to insert to tree from array (avoid skew tree)
+    # TC => O(N* Log(N))
+    def populateSorted(self,arr):
+        self.populateSortedInternal(arr,0,len(arr)-1)
+    
+    def populateSortedInternal(self,arr,lo,hi):
+        if lo>hi:
+            return 
+        mid = (lo+hi)//2
+        self.insert(arr[mid]) #Log(N)
+        self.populateSortedInternal(arr,lo,mid-1)
+        self.populateSortedInternal(arr,mid+1,hi)
+
+
+
 bst = BST()
-arr=[3,4,5,2,6,1,7]
-bst.populate(arr)
+arr=[1,2,3,4,5,6]
+bst.populateSorted(arr)
 bst.display()
-
-
-'''
-output
-Root Node : 3
-LeftChildOf 3: 2
-LeftChildOf 2: 1
-RightChildOf 3: 4
-RightChildOf 4: 5
-RightChildOf 5: 6
-RightChildOf 6: 7
-
-'''
