@@ -50,6 +50,7 @@ class AVL:
 
         node.height = max(self.height(node.left),self.height(node.right))+1
 
+        # Only for the one case where the subtree is unbalanced -> it will balance and return it 
         return self.rotate(node) #fixes the structure of tree and return node
     
     #used to insert to tree from array
@@ -130,17 +131,58 @@ class AVL:
 
         return node
     
-    def leftRotate(self,node):
-        pass
+    def rightRotate(self,p):
+         # Reffer Diag 
+        c = p.left
+        t=c.right
 
+        c.right = p 
+        p.left = t 
 
-    def rightRotate(self,node):
-        pass 
+        # update the heights as tree is rotated
+        p.height = max(self.height(p.left),self.height(p.right))+1
+        c.height = max(self.height(c.left),self.height(c.right))+1
+
+        return c 
+
+    def leftRotate(self,c):
+        # Reffer Diag 
+        p = c.right
+        t = p.left
+
+        p.left = c
+        c.right = t
+
+        # update the heights as tree is rotated
+        p.height = max(self.height(p.left),self.height(p.right))+1
+        c.height = max(self.height(c.left),self.height(c.right))+1
+
+        return p
+
+    # def leftRotate(self,p):
+    #     # Reffer Diag 
+    #     c = p.right
+    #     t=c.left
+
+    #     c.left = p 
+    #     p.right = t 
+
+    #     # update the heights as tree is rotated
+    #     p.height = max(self.height(p.left),self.height(p.right))+1
+    #     c.height = max(self.height(c.left),self.height(c.right))+1
+
+    #     return c 
+        
     
-bst = AVL()
-arr=[1,2,3,4,5,6]
-bst.populateSorted(arr)
-bst.display()
-# bst.preorder()
-# bst.inorder()
-bst.postorder()
+avl = AVL()
+# arr=[1,2,3,4,5,6]
+# bst.populate(arr)
+# bst.display()
+# # bst.preorder()
+# # bst.inorder()
+# bst.postorder()
+for i in range(1,1001):
+    avl.insert(i)
+# avl.display()
+# avl.inorder()
+print(avl.height(avl.root))
