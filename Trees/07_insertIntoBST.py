@@ -100,7 +100,30 @@ class BST:
         self.postorderInternal(node.right)
         print(node.value)
     
-
+    def levelorder(self):
+        out=self.levelorderInternal(self.root)
+        print(out)
+        return out
+    
+    def levelorderInternal(self,node):
+        q=[]
+        q.append(node)
+        c=1
+        res=[]
+        while(q):
+            temp=[]
+            for i in range(c):
+                val=q.pop(0)
+                c-=1
+                temp.append(val.value)
+                if val.left:
+                    q.append(val.left)
+                    c+=1
+                if val.right:
+                    q.append(val.right)
+                    c+=1
+            res.append(temp)
+        return res
 
 bst = BST()
 arr=[1,2,3,4,5,6]
@@ -109,3 +132,4 @@ bst.display()
 # bst.preorder()
 # bst.inorder()
 bst.postorder()
+bst.levelorder()
