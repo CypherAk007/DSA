@@ -124,6 +124,27 @@ class BST:
                     c+=1
             res.append(temp)
         return res
+    
+    def levelorderSuccessor(self,t):
+        out=self.levelorderSuccessorInternal(self.root,t)
+        print(out)
+        return out
+    
+    def levelorderSuccessorInternal(self,node,t):
+        q=[]
+        q.append(node)
+        while(q):
+            curNode =q.pop(0)
+            if curNode.left:
+                q.append(curNode.left)
+            if curNode.right:
+                q.append(curNode.right)
+            if curNode.value==t:
+                break
+        if len(q)==0:
+            return -1 
+        return q[0].value
+
 
 bst = BST()
 arr=[1,2,3,4,5,6]
@@ -133,3 +154,4 @@ bst.display()
 # bst.inorder()
 bst.postorder()
 bst.levelorder()
+bst.levelorderSuccessor(3)
