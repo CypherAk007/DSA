@@ -144,21 +144,29 @@ class BST:
         if len(q)==0:
             return -1 
         return q[0].value
+    def countPaths(self,summ):
+        return self.countPathsInternal(self.root,summ)
 
-    def countPaths(self,node,summ):
+    def countPathsInternal(self,node,summ):
         path = []
-        return self.helperCP(node,summ,path)
+        val=self.helperCP(node,summ,path)
+        print(val)
+        return val
     
     def helperCP(self,node,summ,path):
         if node==None:
             return 0 
         
-        path.add(node.val)
+        path.append(node.value)
         count=0
-        summ=0
+        s=0
         #How Many paths can i Make?Do calc
+        for i in range(len(path)-1,-1,-1):
+            s+=path[i]
+            if s==summ:
+                count+=1
 
-        count+=self.helperCP(node.left,summ,path) + self.helper(node.right,summ,path)
+        count+=self.helperCP(node.left,summ,path) + self.helperCP(node.right,summ,path)
 
         # Backtrack before returning count 
         path.pop()
@@ -177,3 +185,4 @@ bst.display()
 bst.postorder()
 bst.levelorder()
 bst.levelorderSuccessor(3)
+bst.countPaths(4)
