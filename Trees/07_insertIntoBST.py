@@ -145,6 +145,28 @@ class BST:
             return -1 
         return q[0].value
 
+    def countPaths(self,node,summ):
+        path = []
+        return self.helperCP(node,summ,path)
+    
+    def helperCP(self,node,summ,path):
+        if node==None:
+            return 0 
+        
+        path.add(node.val)
+        count=0
+        summ=0
+        #How Many paths can i Make?Do calc
+
+        count+=self.helperCP(node.left,summ,path) + self.helper(node.right,summ,path)
+
+        # Backtrack before returning count 
+        path.pop()
+
+        return count
+
+
+
 
 bst = BST()
 arr=[1,2,3,4,5,6]
