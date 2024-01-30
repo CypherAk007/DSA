@@ -177,12 +177,15 @@ class BST:
 
 
 bst = BST()
-arr=[1,2,3,4,5,6]
-bst.populateSorted(arr)
+# arr=[1,2,3,4,5,6]
+# bst.populateSorted(arr)
+arr=[3,1]
+bst.populate(arr)
 bst.display()
 # bst.preorder()
 # bst.inorder()
-bst.postorder()
-bst.levelorder()
-bst.levelorderSuccessor(3)
-bst.countPaths(4)
+# bst.postorder()
+# bst.levelorder()
+# bst.levelorderSuccessor(3)
+# bst.countPaths(4)
+print(bst.height(bst.root))
