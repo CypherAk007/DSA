@@ -61,3 +61,13 @@
 - BitManipulations
 - https://www.geeksforgeeks.org/problems/division-without-using-multiplication-division-and-mod-operator/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=bottom_sticky_on_article
 - https://leetcode.com/problems/divide-two-integers/description/
+
+## Github commands
+- fatal: Need to specify how to reconcile divergent branches. 
+- git config --global pull.rebase true
+- How to push Existing proj
+- git init
+- git add .
+- git commit -m "Add existing project files to Git"
+- git remote add origin https://github.com/cameronmcnz/example-website.git
+- git push -u -f origin master
