@@ -8,6 +8,9 @@
 <img width="840" alt="Screenshot 2023-09-16 at 10 18 43 AM" src="https://github.com/CypherAk007/DSA/assets/71595919/4506b953-c757-420b-bee0-94dfa0bf71f8">
 
 ## unsolved/reffer - 
+- Contests
+  -  https://leetcode.com/contest/weekly-contest-383/
+  -  https://leetcode.com/contest/weekly-contest-384/
 - Arrays
 - https://www.interviewbit.com/problems/climbing-stairs/  - (Arrays-dp)
 - 
