@@ -12,6 +12,7 @@
   -  https://leetcode.com/contest/weekly-contest-383/
   -  https://leetcode.com/contest/weekly-contest-384/
 - Arrays
+- https://leetcode.com/contest/weekly-contest-385/problems/find-the-length-of-the-longest-common-prefix/
 - https://www.interviewbit.com/problems/climbing-stairs/  - (Arrays-dp)
 - 
 - HashMap - How it works and implementation + TC+SC + comparision for java and python
