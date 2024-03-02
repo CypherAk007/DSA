@@ -12,6 +12,7 @@
   -  https://leetcode.com/contest/weekly-contest-383/
   -  https://leetcode.com/contest/weekly-contest-384/
 - Arrays
+- https://leetcode.com/problems/longest-even-odd-subarray-with-threshold/description/
 - https://leetcode.com/contest/weekly-contest-385/problems/find-the-length-of-the-longest-common-prefix/
 - https://www.interviewbit.com/problems/climbing-stairs/  - (Arrays-dp)
 - 
